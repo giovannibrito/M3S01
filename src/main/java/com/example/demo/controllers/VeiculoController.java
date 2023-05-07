@@ -2,8 +2,9 @@ package com.example.demo.controllers;
 
 import com.example.demo.dtos.VeiculoDto;
 import com.example.demo.models.Veiculo;
+import com.example.demo.services.VeiculoService;
 import jakarta.validation.Valid;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 @RequestMapping("/api/veiculos")
 @RestController
 public class VeiculoController {
-    private VeiculoService service;
+    private final VeiculoService service;
 
     public VeiculoController(VeiculoService service) {
         this.service = service;
@@ -32,9 +33,10 @@ public class VeiculoController {
         return service.buscarVeiculoPelaPlaca(placa);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{placa}")
-    public ResponseEntity<String> excluirVeiculo(@PathVariable String placa){
-        return service.excluirVeiculo(placa);
+    public void excluirVeiculo(@PathVariable String placa){
+        service.excluirVeiculo(placa);
     }
 
     @PutMapping("/{placa}/multas")

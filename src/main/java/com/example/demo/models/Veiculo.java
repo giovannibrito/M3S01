@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
@@ -12,5 +13,5 @@ public class Veiculo {
     private String tipo;
     private String cor;
     private Integer anoDeFabricacao;
-    private Integer qtdMultas;
+    private Integer qtdMultas = 0;
 }

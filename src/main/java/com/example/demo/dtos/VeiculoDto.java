@@ -1,6 +1,7 @@
 package com.example.demo.dtos;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
@@ -11,6 +12,6 @@ public class VeiculoDto {
     private String tipo;
     @NotEmpty(message = "O campo cor é obrigatório")
     private String cor;
-    @NotEmpty(message = "O campo anoDeFabricacao é obrigatório")
+    @NotNull(message = "O campo anoDeFabricacao é obrigatório")
     private Integer anoDeFabricacao;
 }
