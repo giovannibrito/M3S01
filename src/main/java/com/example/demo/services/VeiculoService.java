@@ -7,7 +7,6 @@ import com.example.demo.models.Veiculo;
 import com.example.demo.repositories.VeiculoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.modelmapper.ModelMapper;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
